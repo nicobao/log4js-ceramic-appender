@@ -1,20 +1,16 @@
 {
-  "name": "log4js-influxdb-appender",
-  "version": "0.2.0",
-  "description": "Simple InfluxDB appender for log4js-node",
-  "homepage": "https://github.com/rnd-debug/log4js-influxdb-appender",
-  "main": "./lib/index.js",
-  "types": "./types/index.d.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
+  "name": "log4js-ceramic-appender",
+  "version": "0.1.0",
+  "description": "Simple Ceramic Network appender for log4js-node",
+  "homepage": "https://github.com/rnd-debug/log4js-ceramic-appender",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "lib",
-    "types"
+    "/dist"
   ],
   "scripts": {
-    "prepush": "npm test",
+    "build": "tsc",
+    "prepush": "yarn test",
     "commitmsg": "validate-commit-msg",
     "pretest": "eslint 'lib/**/*.js' 'test/**/*.js'",
     "test": "tap 'test/tap/**/*.js' --cov",
@@ -26,30 +22,30 @@
     "logging",
     "appender",
     "log",
-    "influx",
-    "influxdb"
+    "ceramic",
+    "blockchain"
   ],
-  "author": "rnd-debug",
-  "license": "MIT",
+  "author": "Nicolas Gimenez",
+  "license": "BSD-2-Clause-Patent",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rnd-debug/log4js-influxdb-appender.git"
+    "url": "https://github.com/nicobao/log4js-ceramic-appender"
   },
   "bugs": {
-    "url": "https://github.com/rnd-debug/log4js-influxdb-appender/issues"
+    "url": "https://github.com/nicobao/log4js-ceramic-appender"
   },
   "engines": {
     "node": ">=8.0"
   },
   "dependencies": {
-    "debug": "^4.1.1",
-    "influx": "^5.5.1",
-    "lodash": "^4.17.19"
+    "debug": "^4.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@log4js-node/sandboxed-module": "^2.2.1",
+    "@types/debug": "^4.1.5",
+    "@types/node": "^15.6.0",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.33.0",
     "codecov": "^3.6.5",
@@ -58,7 +54,8 @@
     "eslint-plugin-import": "^2.20.2",
     "husky": "^4.2.5",
     "log4js": "^6.2.1",
-    "tap": "^14.10.7"
+    "tap": "^14.10.7",
+    "typescript": "^4.2.4"
   },
   "browser": {
     "os": false
